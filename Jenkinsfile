@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('dotnet') {
             steps {
-                sh dotnet build
+                echo 'dotnet build'
+                sh 'dotnet build'
             }
         }
         stage('typescript') {
