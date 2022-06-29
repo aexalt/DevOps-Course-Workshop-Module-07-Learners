@@ -18,8 +18,18 @@ pipeline {
             }
         }
         stage('typescript') {
+            agent {
+                docker {
+                    image 'node:17-bullseye'
+                }
+            }
             steps {
                 echo 'ts build'
+                dir("DotnetTemplate.Web"){
+                    sh 'npm install'
+                    sh 'npm run lint'
+                    sh 'npm t'
+                }
             }
         }
     }
