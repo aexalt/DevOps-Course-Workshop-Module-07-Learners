@@ -14,15 +14,14 @@ jobs:
     - name: test-dotnet
       run: dotnet test
 
-    - name: changefolder-template
-      run: cd DotnetTemplate.Web
-
     - name: build-typescript
       run: npm install
       working-directory: DotnetTemplate.Web
 
-    - name: typescript-tests
-      run: npm t
-
     - name: typscript-lint
       run: npm run lint
+      working-directory: DotnetTemplate.Web
+
+    - name: typescript-tests
+      run: npm t
+      working-directory: DotnetTemplate.Web
