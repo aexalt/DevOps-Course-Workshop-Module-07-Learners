@@ -10,7 +10,7 @@ pipeline {
         }
         stage('typescript') {
             steps {
-
+                echo 'ts build'
             }
         }
     }
